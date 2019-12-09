@@ -3,8 +3,8 @@ const weather = document.querySelector(".js-weather");
 const API_KEY = "5dc753fbb35d7e99e7fd80b06a9a18a7";
 const COORDS = "coords";
 
-function getWeather(lat, lng) {
-  fetch(
+async function getWeather(lat, lng) {
+  await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
   ).then((response) => {
     return response.json();

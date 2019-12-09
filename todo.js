@@ -45,6 +45,10 @@ function paintToDo(text) {
 function handleSubmit(event) {
   event.preventDefault();
   const currentValue = toDoInput.value;
+  if(currentValue === '') {
+    alert('텍스트를 입력해주세요.');
+    return false;
+  }
   paintToDo(currentValue);
   toDoInput.value = "";
 }
